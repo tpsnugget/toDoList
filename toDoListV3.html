@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="toDoList.css">
+  <script src="toDoListV3.js"></script>
+  <title>Watch and Code Practical JavaScript ToDo List</title>
+</head>
+<body>
+
+<h1>Watch and Code Practical JavaScript ToDo List</h1>
+
+<script>
+  var toDoList = {
+  toDos: [],
+  displayToDos: function() {
+    console.log("My ToDo List is: ", this.toDos);
+  },
+  addToDo: function(item) {
+    this.toDos.push(item);
+  },
+  changeToDo: function(numToChange, item) {
+    this.toDos[numToChange] = item;
+  },
+  deleteToDo: function(numToDelete) {
+    this.toDos.splice(numToDelete, 1);
+  }
+};
+toDoList.addToDo("Item 0");
+toDoList.addToDo("Item 1");
+toDoList.addToDo("Item 2");
+toDoList.addToDo("Item 3");
+toDoList.addToDo("Item 4");
+toDoList.addToDo("Item 5");
+toDoList.displayToDos();
+toDoList.changeToDo(2, "Item 2 is bad");
+toDoList.displayToDos();
+toDoList.deleteToDo(2);
+toDoList.displayToDos();
+</script>
+
+</body>
+</html>

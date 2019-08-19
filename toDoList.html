@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="toDoList.css">
   <script src="toDoList.js"></script>
   <title>Watch and Code Practical JavaScript ToDo List</title>
 </head>
@@ -12,7 +13,43 @@
 <h1>Watch and Code Practical JavaScript ToDo List</h1>
 
 <script>
-  console.log("My ToDo List: ", toDoList);
+  var myList = startBlankList();
+  myList = addToList("item 0", myList);
+  myList = addToList("item 1", myList);
+  myList = addToList("item 2", myList);
+  myList = addToList("item 3", myList);
+  myList = addToList("item 4", myList);
+  myList = addToList("item 5", myList);
+  myList = updateList(0, "Updated Item Zero", myList)
+  displayToDoList(myList);
+
+  myList = deleteItems(1,2,myList);
+  displayToDoList(myList);
+</script>
+
+ <!-- Objects in JS look a lot like structure arrays in Matlab -->
+<script>
+  var myObj = {
+    var1: "Frank",
+    var2: "Ted",
+    var3: 23
+  }
+  console.log(myObj);
+  myObj.var4 = 33;
+  console.log(myObj);
+</script>
+
+ <!-- Here a function is defined inside an Object, this is called a Method -->
+<script>
+  var person = {
+    name: "Mike Giebner",
+    displayToDoList: function() {
+      // Both lines below work, but this is probably more common as is does not change
+      console.log(person.name);
+      console.log(this.name);
+    }
+  }
+  person.displayToDoList();
 </script>
 
 </body>

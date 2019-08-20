@@ -22,7 +22,30 @@
   },
   // This is a method
   displayToDos: function() {
-    console.log("My ToDo List is: ", this.toDos);
+    // If the array is empty, display a message and don't display the number of
+    // items in the array or the "These items are: " message
+    if ( this.toDos.length === 0) {
+      console.log("Your array is empty!");
+    }
+    // Perform this section if there is at least one item in the array
+    else {
+      for ( var i = 0; i < this.toDos.length; i++ ) {
+      if ( i === 0) {
+        console.log("There are", this.toDos.length, "items in my array");
+        console.log("These items are: ");
+      }
+      // Print completed status
+      // Top part is if item complete is TRUE
+      if ( this.toDos[i].completed ) {
+        console.log("(x) ", this.toDos[i].toDoText);
+      }
+      // This part is if item complete is FALSE
+      else {
+        console.log("( ) ", this.toDos[i].toDoText);
+      }
+    }
+    }
+
   },
   // This is a method
   addToDo: function(item) {
@@ -45,46 +68,18 @@
 };
 
 toDoList.initializeToDos();
-toDoList.addToDo("Item 0");
-toDoList.addToDo("Item 1");
-toDoList.addToDo("Item 2");
-toDoList.addToDo("Item 3");
-toDoList.addToDo("Item 4");
-toDoList.addToDo("Item 5");
+
+toDoList.displayToDos();
+
+for ( var i = 0; i < 10; i++) {
+  toDoList.addToDo(i);
+}
+
 toDoList.displayToDos();
 toDoList.changeToDo(2, "Item 2 is bad");
 toDoList.displayToDos();
 toDoList.toggleCompleted(0);
-toDoList.toggleCompleted(0);
-toDoList.toggleCompleted(0);
 toDoList.displayToDos();
-// toDoList.displayToDos();
-// toDoList.changeToDo(2, "Item 2 is bad");
-// console.log("Item 2 has been changed");
-// toDoList.displayToDos();
-// toDoList.deleteToDo(2);
-// console.log("Item 2 has been deleted");
-// toDoList.displayToDos();
-
-// var j = toDoList.toDos.length;
-
-// for (var i = 0; i < j; i++) {
-//   toDoList.deleteToDo(0);
-//   toDoList.displayToDos();
-// }
-
-// var toDoListOne = toDoList;
-
-// console.log("toDoList has been copied to toDoListOne");
-// toDoListOne.displayToDos();
-
-// toDoList.initializeToDos();
-
-// console.log("toDoList has been re-initialized");
-// toDoList.displayToDos();
-
-// console.log("toDoListOne has been changed too somehow");
-// toDoListOne.displayToDos();
 
 </script>
 

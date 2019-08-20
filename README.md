@@ -14,3 +14,7 @@
 # Version 4, now storing objects in our array
 # Version 4, update objects in our array
 # Version 4, toggle completed status in our array
+
+# Version 5, FOR loops
+# Version 5, generating console.log text with a FOR loop
+

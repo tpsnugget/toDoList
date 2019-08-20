@@ -26,15 +26,21 @@
   },
   // This is a method
   addToDo: function(item) {
-    this.toDos.push(item);
+    this.toDos.push({
+      toDoText: item,
+      completed: false
+    });
   },
   // This is a method
-  changeToDo: function(numToChange, item) {
-    this.toDos[numToChange] = item;
+  changeToDo: function(numToChange, toDoText) {
+    this.toDos[numToChange].toDoText = toDoText;
   },
   // This is a method
   deleteToDo: function(numToDelete) {
     this.toDos.splice(numToDelete, 1);
+  },
+  toggleCompleted: function(numToChange) {
+    this.toDos[numToChange].completed = ! (this.toDos[numToChange].completed);
   }
 };
 
@@ -47,18 +53,25 @@ toDoList.addToDo("Item 4");
 toDoList.addToDo("Item 5");
 toDoList.displayToDos();
 toDoList.changeToDo(2, "Item 2 is bad");
-console.log("Item 2 has been changed");
 toDoList.displayToDos();
-toDoList.deleteToDo(2);
-console.log("Item 2 has been deleted");
+toDoList.toggleCompleted(0);
+toDoList.toggleCompleted(0);
+toDoList.toggleCompleted(0);
 toDoList.displayToDos();
+// toDoList.displayToDos();
+// toDoList.changeToDo(2, "Item 2 is bad");
+// console.log("Item 2 has been changed");
+// toDoList.displayToDos();
+// toDoList.deleteToDo(2);
+// console.log("Item 2 has been deleted");
+// toDoList.displayToDos();
 
-var j = toDoList.toDos.length;
+// var j = toDoList.toDos.length;
 
-for (var i = 0; i < j; i++) {
-  toDoList.deleteToDo(0);
-  toDoList.displayToDos();
-}
+// for (var i = 0; i < j; i++) {
+//   toDoList.deleteToDo(0);
+//   toDoList.displayToDos();
+// }
 
 // var toDoListOne = toDoList;
 

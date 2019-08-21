@@ -18,3 +18,4 @@
 # Version 5, FOR loops
 # Version 5, generating console.log text with a FOR loop
 
+# Version 6

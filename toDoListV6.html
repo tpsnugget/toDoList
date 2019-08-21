@@ -43,7 +43,7 @@
       else {
         console.log("( ) ", this.toDos[i].toDoText);
       }
-    }
+      }
     }
   },
   // This is a method
@@ -63,6 +63,29 @@
   },
   toggleCompleted: function(numToChange) {
     this.toDos[numToChange].completed = ! (this.toDos[numToChange].completed);
+  },
+  toggleAll: function() {
+    var totalToDos = this.toDos.length;
+    var completedToDos = 0;
+    for ( var i = 0; i < this.toDos.length; i++ ) {
+      if ( this.toDos[i].completed ) {
+        completedToDos++;
+      }
+    }
+    // If all items are marked COMPLETE then make all FALSE
+    if ( completedToDos === totalToDos ) {
+      for ( var i = 0; i < this.toDos.length; i++ ) {
+        toDoList.toggleCompleted(i);
+      }
+    }
+    // Some items are not marked COMPLETE, so make all COMPLETE
+    else {
+      for ( var i = 0; i < this.toDos.length; i++ ) {
+        if ( !this.toDos[i].completed ) {
+          toDoList.toggleCompleted(i);
+        }
+      }
+    }
   }
 };
 
@@ -72,12 +95,11 @@ toDoList.displayToDos();
 
 for ( var i = 0; i < 10; i++) {
   toDoList.addToDo(i);
+  // toDoList.toggleCompleted(i);
 }
-
-toDoList.displayToDos();
-toDoList.changeToDo(2, "Item 2 is bad");
-toDoList.displayToDos();
 toDoList.toggleCompleted(0);
+toDoList.displayToDos();
+toDoList.toggleAll();
 toDoList.displayToDos();
 
 </script>

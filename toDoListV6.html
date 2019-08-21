@@ -72,7 +72,7 @@
         completedToDos++;
       }
     }
-    // If all items are marked COMPLETE then make all FALSE
+    // If all items are marked COMPLETE then make all FALSE (NOT COMPLETE)
     if ( completedToDos === totalToDos ) {
       for ( var i = 0; i < this.toDos.length; i++ ) {
         toDoList.toggleCompleted(i);

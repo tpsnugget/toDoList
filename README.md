@@ -18,4 +18,7 @@
 # Version 5, FOR loops
 # Version 5, generating console.log text with a FOR loop
 
-# Version 6
+# Version 6, toggle all
+
+# Interlude between Version 6 and Version 7 is for data types in JS and
+# comparing items and comparing objects

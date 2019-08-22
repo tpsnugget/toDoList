@@ -22,3 +22,12 @@
 
 # Interlude between Version 6 and Version 7 is for data types in JS and
 # comparing items and comparing objects
+
+# Version 7, HTML and the DOM
+#   Added Display ToDos button
+#   Added Toggle All button
+
+# Interlude between version 7 and version 8 is about the debugger
+# In JS file type debugger;
+
+# Now starting Version 8

@@ -77,22 +77,50 @@
 
 toDoList.initializeToDos();
 
-for ( var i = 0; i < 10; i++) {
-  toDoList.addToDo(i);
-  // toDoList.toggleCompleted(i);
+// for ( var i = 0; i < 10; i++) {
+//   toDoList.addToDo(i);
+//   // toDoList.toggleCompleted(i);
+// }
+
+// No longer needed
+// var displayToDosButton = document.getElementById("displayToDosButton");
+// var toggleAllbutton = document.getElementById("toggleAllbutton");
+
+// displayToDosButton.addEventListener("click", function() {
+//   toDoList.displayToDos();
+// });
+
+// toggleAllbutton.addEventListener("click", function() {
+//   toDoList.toggleAll();
+// });
+
+var handlers = {
+  displayToDos: function() {
+    toDoList.displayToDos();
+  },
+  addToDo: function() {
+    var addToDoTextInput = document.getElementById("addToDoTextInput");
+    toDoList.addToDo(addToDoTextInput.value);
+    addToDoTextInput.value = "";
+  },
+  changeToDo: function() {
+    var changeToDoPosition = document.getElementById("changeToDoPosition")
+    var changeToDoTextInput = document.getElementById("changeToDoTextInput")
+    toDoList.changeToDo(changeToDoPosition.valueAsNumber, changeToDoTextInput.value);
+    changeToDoPosition.value = "";
+    changeToDoTextInput.value = "";
+  },
+  deleteToDo: function() {
+    var deleteToDoPositioon = document.getElementById("deleteToDoPosition");
+    toDoList.deleteToDo(deleteToDoPositioon.valueAsNumber);
+    deleteToDoPositioon.value = "";
+  },
+  toggleCompleted: function() {
+    var toggleCompletedToDoPosition = document.getElementById("toggleCompletedToDoPosition");
+    toDoList.toggleCompleted(toggleCompletedToDoPosition.valueAsNumber);
+    toggleCompletedToDoPosition.value = "";
+  },
+  toggleAll: function() {
+    toDoList.toggleAll();
+  }
 }
-{/* toDoList.toggleCompleted(0);
-toDoList.displayToDos();
-toDoList.toggleAll();
-toDoList.displayToDos(); */}
-
-var displayToDosButton = document.getElementById("displayToDosButton");
-var toggleAllbutton = document.getElementById("toggleAllbutton");
-
-displayToDosButton.addEventListener("click", function() {
-  toDoList.displayToDos();
-});
-
-toggleAllbutton.addEventListener("click", function() {
-  toDoList.toggleAll();
-});

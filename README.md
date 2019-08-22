@@ -30,4 +30,8 @@
 # Interlude between version 7 and version 8 is about the debugger
 # In JS file type debugger;
 
-# Now starting Version 8
+# Now starting Version 8, Refactoring and getting data from inputs
+# .addToDo
+# .changeToDo
+# .DeleteToDo
+# .toggleCompleted

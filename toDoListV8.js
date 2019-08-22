@@ -99,25 +99,45 @@ var handlers = {
     toDoList.displayToDos();
   },
   addToDo: function() {
+  
     var addToDoTextInput = document.getElementById("addToDoTextInput");
-    toDoList.addToDo(addToDoTextInput.value);
+
+    // This IF gets rid of unintended behavior. Leaving the text field blank was
+    // allowing a blank ToDo. This corrects that.
+    if ( addToDoTextInput.value !== "" ) {
+      toDoList.addToDo(addToDoTextInput.value);
+    }
     addToDoTextInput.value = "";
   },
   changeToDo: function() {
     var changeToDoPosition = document.getElementById("changeToDoPosition")
     var changeToDoTextInput = document.getElementById("changeToDoTextInput")
-    toDoList.changeToDo(changeToDoPosition.valueAsNumber, changeToDoTextInput.value);
+
+    // This IF gets rid of unintended behavior.
+    if ( changeToDoPosition.valueAsNumber >= 0 &
+      changeToDoTextInput.value !== "" ) {
+        toDoList.changeToDo(changeToDoPosition.valueAsNumber, changeToDoTextInput.value);
+    }
     changeToDoPosition.value = "";
     changeToDoTextInput.value = "";
   },
   deleteToDo: function() {
     var deleteToDoPositioon = document.getElementById("deleteToDoPosition");
-    toDoList.deleteToDo(deleteToDoPositioon.valueAsNumber);
+
+    // This IF gets rid of unintended behavior. If position is left blank it is
+    // NaN, but will still delete the 0th position. This corrects that.
+    if ( deleteToDoPositioon.valueAsNumber >= 0 ) {
+      toDoList.deleteToDo(deleteToDoPositioon.valueAsNumber);
+    }
     deleteToDoPositioon.value = "";
   },
   toggleCompleted: function() {
     var toggleCompletedToDoPosition = document.getElementById("toggleCompletedToDoPosition");
-    toDoList.toggleCompleted(toggleCompletedToDoPosition.valueAsNumber);
+
+    // This IF gets rid of unintended behavior.
+    if ( toggleCompletedToDoPosition.valueAsNumber >= 0 ) {
+      toDoList.toggleCompleted(toggleCompletedToDoPosition.valueAsNumber);
+    }
     toggleCompletedToDoPosition.value = "";
   },
   toggleAll: function() {

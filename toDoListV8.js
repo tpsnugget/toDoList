@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="toDoList.css">
-  <script src="toDoListV3.js"></script>
-  <title>Watch and Code Practical JavaScript ToDo List</title>
-</head>
-<body>
-
-<h1>Watch and Code Practical JavaScript ToDo List Version 6</h1>
-
-<button>Display ToDos</button>
-<button>Toggle All</button>
-
-
-<script>
-  // This is an object
+// Name: Mike Giebner
+// Watch and Code Practical JavaScript
 
   // This is a method
   var toDoList = {
@@ -95,18 +77,22 @@
 
 toDoList.initializeToDos();
 
-toDoList.displayToDos();
-
 for ( var i = 0; i < 10; i++) {
   toDoList.addToDo(i);
   // toDoList.toggleCompleted(i);
 }
-toDoList.toggleCompleted(0);
+{/* toDoList.toggleCompleted(0);
 toDoList.displayToDos();
 toDoList.toggleAll();
-toDoList.displayToDos();
+toDoList.displayToDos(); */}
 
-</script>
+var displayToDosButton = document.getElementById("displayToDosButton");
+var toggleAllbutton = document.getElementById("toggleAllbutton");
 
-</body>
-</html>
+displayToDosButton.addEventListener("click", function() {
+  toDoList.displayToDos();
+});
+
+toggleAllbutton.addEventListener("click", function() {
+  toDoList.toggleAll();
+});

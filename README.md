@@ -40,3 +40,6 @@
 
 # Interlude between Version 9 and Version 10
 # Functions inside of functions
+
+# Version 10
+#   Create a createDeleteButton as a new method in the view object

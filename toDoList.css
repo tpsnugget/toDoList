@@ -7,3 +7,15 @@
 h1 {
   text-align: center;
 }
+
+button {
+  margin-left: 10px;
+}
+
+div {
+  margin: 10px;
+}
+
+li {
+  margin-top: 5px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="toDoList.css">
+  <title>Watch and Code Practical JavaScript ToDo List</title>
+</head>
+<body>
+
+<h1>Watch and Code Practical JavaScript ToDo List Version 10</h1>
+
+<!-- No longer needed
+<button id="displayToDosButton">Display ToDos</button>
+<button id="toggleAllbutton">Toggle All</button> -->
+
+<div>
+  <button onclick="handlers.toggleAll()" type="button" class="btn btn-info">Toggle All</button>
+</div>
+
+<div>
+  <button onclick="handlers.addToDo()" type="button" class="btn btn-info">Add a ToDo</button>
+  <input id="addToDoTextInput" type="text" placeholder="Add a New ToDo">
+</div>
+
+<div>
+  <button onclick="handlers.changeToDo()" type="button" class="btn btn-info">Change ToDo</button>
+  <input id="changeToDoPosition" type="number" placeholder="Enter an Integer Number">
+  <input id="changeToDoTextInput" type="text" placeholder="Change a ToDo">
+</div>
+
+<div>
+  <button onclick="handlers.toggleCompleted()" type="button" class="btn btn-info">Toggle a ToDo</button>
+  <input id="toggleCompletedToDoPosition" type="number" placeholder="Enter an Integer Number">
+</div>
+
+<div>
+  <ul>
+  </ul>
+</div>
+
+<script src="toDoListV10.js"></script>
+
+</body>
+</html>

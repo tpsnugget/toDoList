@@ -43,3 +43,4 @@
 
 # Version 10
 #   Create a createDeleteButton as a new method in the view object
+#   Event Delegation is used to listen to clicks in the ul rather than for each li

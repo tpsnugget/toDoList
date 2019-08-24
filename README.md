@@ -27,7 +27,7 @@
 #   Added Display ToDos button
 #   Added Toggle All button
 
-# Interlude between version 7 and version 8 is about the debugger
+# Interlude between Version 7 and Version 8 is about the debugger
 # In JS file type debugger;
 
 # Now starting Version 8, Refactoring and getting data from inputs
@@ -37,3 +37,6 @@
 # .toggleCompleted
 
 # Version 9, inserting elements into the DOM!! Finally!!
+
+# Interlude between Version 9 and Version 10
+# Functions inside of functions

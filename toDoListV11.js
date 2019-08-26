@@ -28,46 +28,38 @@
     var totalToDos = this.toDos.length;
     var completedToDos = 0;
 
-    for ( var i = 0; i < this.toDos.length; i++ ) {
-      if ( this.toDos[i].completed ) {
+    this.toDos.forEach( function( todo ) {
+      if ( todo.completed ) {
         completedToDos++;
       }
-    }
+    } )
+
     // If all items are marked COMPLETE then make all FALSE (NOT COMPLETE)
     if ( completedToDos === totalToDos ) {
-      for ( var i = 0; i < this.toDos.length; i++ ) {
-        toDoList.toggleCompleted(i);
-      }
+      this.toDos.forEach( function( todo ) {
+        todo.completed = false;
+      })
     }
     // Some items are not marked COMPLETE, so make all COMPLETE
     else {
-      for ( var i = 0; i < this.toDos.length; i++ ) {
-        if ( !this.toDos[i].completed ) {
-          toDoList.toggleCompleted(i);
-        }
-      }
+      this.toDos.forEach( function( todo ) {
+        todo.completed = true;
+      })
     }
+
+    this.toDos.forEach ( function( todo ) {
+      if ( completedToDos === totalToDos ) {
+        todo.completed = false;
+      }
+      else {
+        todo.completed = true;
+      }
+    })
+
   }
 };
 
 toDoList.initializeToDos();
-
-// for ( var i = 0; i < 10; i++) {
-//   toDoList.addToDo(i);
-//   // toDoList.toggleCompleted(i);
-// }
-
-// No longer needed
-// var displayToDosButton = document.getElementById("displayToDosButton");
-// var toggleAllbutton = document.getElementById("toggleAllbutton");
-
-// displayToDosButton.addEventListener("click", function() {
-//   toDoList.displayToDos();
-// });
-
-// toggleAllbutton.addEventListener("click", function() {
-//   toDoList.toggleAll();
-// });
 
 var handlers = {
   addToDo: function() {
@@ -124,23 +116,24 @@ var view = {
   var toDosUl = document.querySelector("ul");
   toDosUl.innerHTML = "";
 
-    for ( var i = 0; i < toDoList.toDos.length; i++ ) {
-      var toDosLi = document.createElement("li");
-      var toDoTextWithCompletion = "";
+    toDoList.toDos.forEach( function( todo, position ) {
+        var toDosLi = document.createElement("li")
+        var toDoTextWithCompletion = ""
 
-      if ( toDoList.toDos[i].completed ) {
-        toDoTextWithCompletion = "( x ) " + toDoList.toDos[i].toDoText;
-      }
-      else { 
-        toDoTextWithCompletion = "(   ) " + toDoList.toDos[i].toDoText;
-      }
+        if ( todo.completed ) {
+          toDoTextWithCompletion = "( x ) " + todo.toDoText
+        }
+        else { 
+          toDoTextWithCompletion = "(   ) " + todo.toDoText
+        }
 
-      toDosLi.id = i;
-      toDosLi.textContent = toDoTextWithCompletion;
-      toDosLi.appendChild(this.createDeleteButton());
+        toDosLi.id = position
+        toDosLi.textContent = toDoTextWithCompletion
+        toDosLi.appendChild(this.createDeleteButton())
 
-      toDosUl.appendChild(toDosLi);
-    }
+        toDosUl.appendChild(toDosLi)
+    }, this )
+
   },
   createDeleteButton: function() {
     var deleteButton = document.createElement("button");
